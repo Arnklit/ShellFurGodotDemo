@@ -1,0 +1,12 @@
+[gd_resource type="Environment" load_steps=2 format=2]
+
+[sub_resource type="ProceduralSky" id=1]
+sun_longitude = -135.0
+
+[resource]
+background_mode = 2
+background_sky = SubResource( 1 )
+tonemap_mode = 2
+ssao_enabled = true
+ssao_radius = 0.3
+ssao_radius2 = 0.15

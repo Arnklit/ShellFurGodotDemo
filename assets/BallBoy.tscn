@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/shell_fur/noise_patterns/rough_hair.png" type="Texture" id=1]
+[ext_resource path="res://addons/shell_fur/shell_fur_manager.gd" type="Script" id=2]
+[ext_resource path="res://assets/models/ball_boy.gltf" type="PackedScene" id=3]
+[ext_resource path="res://assets/textures/ballboy_fur_length.png" type="Texture" id=5]
+
+
+
+[node name="ball_boy" instance=ExtResource( 3 )]
+
+[node name="ShellFur" type="Spatial" parent="Armature/Skeleton/BallBoy" index="0"]
+script = ExtResource( 2 )
+pattern_texture = ExtResource( 1 )
+pattern_selector = 1
+base_color = Color( 0.494118, 0.0470588, 0.0470588, 1 )
+tip_color = Color( 1, 0.4, 0.4, 1 )
+layers = 20
+density = 6.278
+length = 0.13
+length_rand = 0.341
+length_texture = ExtResource( 5 )
+thickness_base = 0.963
+thickness_tip = 0.382
+custom_physics_pivot = NodePath("../../BoneAttachment")
+gravity = 0.253
+spring = 2.66
+wind_strength = 0.1
+LOD0_distance = 3.0
+LOD1_distance = 20.0
+
+[node name="BoneAttachment" type="BoneAttachment" parent="Armature/Skeleton" index="1"]
+bone_name = "spine_1"
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "ArmatureAction"
+next/ArmatureAction = "ArmatureAction"
