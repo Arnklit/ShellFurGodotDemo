@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Rat-animated2.gltf-fddc0856505a3f2c28e0c1eaab38b378.scn"
+path="res://.import/Rat3.gltf-0e9b7dc08516d2f245f8adfe31bc2f74.scn"
 
 [deps]
 
-source_file="res://assets/models/Rat-animated2.gltf"
-dest_files=[ "res://.import/Rat-animated2.gltf-fddc0856505a3f2c28e0c1eaab38b378.scn" ]
+source_file="res://assets/models/Rat3.gltf"
+dest_files=[ "res://.import/Rat3.gltf-0e9b7dc08516d2f245f8adfe31bc2f74.scn" ]
 
 [params]
 
@@ -31,7 +31,7 @@ animation/fps=15
 animation/filter_script=""
 animation/storage=false
 animation/keep_custom_tracks=false
-animation/optimizer/enabled=false
+animation/optimizer/enabled=true
 animation/optimizer/max_linear_error=0.05
 animation/optimizer/max_angular_error=0.01
 animation/optimizer/max_angle=22

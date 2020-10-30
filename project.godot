@@ -8,22 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "CanvasLayer",
+"class": "FpsLabel",
+"language": "GDScript",
+"path": "res://FPSLabel.gd"
+} ]
 _global_script_class_icons={
-
+"FpsLabel": ""
 }
 
 [application]
 
 config/name="ShellFurTool-Demo"
+run/main_scene="res://RenderScaler.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/size/width=1920
-window/size/height=1080
-window/size/resizable=false
-window/size/borderless=true
+window/size/width=1280
+window/size/height=720
 window/dpi/allow_hidpi=true
 
 [editor_plugins]
@@ -63,5 +67,4 @@ ui_down={
 
 [rendering]
 
-quality/filters/msaa=2
 environment/default_environment="res://default_env.tres"

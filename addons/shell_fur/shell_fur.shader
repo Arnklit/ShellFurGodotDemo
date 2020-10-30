@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode depth_draw_alpha_prepass;
+//render_mode depth_draw_alpha_prepass;
 
 uniform sampler2D pattern_texture : hint_black;
 uniform vec4 base_color : hint_color = vec4(0.43, 0.35, 0.29, 1.0);
@@ -101,6 +101,14 @@ void fragment() {
 	if (LOD < COLOR.a) {
 		discard;
 	}
+	// Workaround for issue https://github.com/godotengine/godot/issues/36669
+	// to allow opaque prepass.
+	vec2 pattern = texture(pattern_texture, UV * density).rg;
+	float scissor_thresh =  mix(-thickness_base + 1.0, -thickness_tip + 1.0, lod_adjusted_layer_value); 
+	float length_tex_value = texture(length_texture, UV * length_tiling).r;
+	if (scissor_thresh > pattern.r * length_tex_value - pattern.r * length_tex_value * pattern.g * length_rand) {
+    	discard;
+	} 
 	
 	NORMAL = mix(NORMAL, projectOnPlane(VIEW, extrusion_vec.xyz), normal_adjustment);
 	
@@ -109,14 +117,4 @@ void fragment() {
 	ROUGHNESS = roughness;
 	AO = 1.0 - (-lod_adjusted_layer_value + 1.0) * ao;
 	
-	// Workaround for issue https://github.com/godotengine/godot/issues/36669
-	// to allow opaque prepass.
-	vec2 pattern = texture(pattern_texture, UV * density).rg;
-	float scissor_thresh =  mix(-thickness_base + 1.0, -thickness_tip + 1.0, lod_adjusted_layer_value); 
-	float length_tex_value = texture(length_texture, UV * length_tiling).r;
-	if (scissor_thresh < pattern.r * length_tex_value - pattern.r * length_tex_value * pattern.g * length_rand) {
-    	ALPHA = 1.0;
-	} else {
-    	ALPHA = 0.0;
-	}
 }

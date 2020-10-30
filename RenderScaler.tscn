@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://RenderScaler.gd" type="Script" id=1]
+[ext_resource path="res://DemoSceneAndroid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://FPSLabel.gd" type="Script" id=3]
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("Viewport")
+
+[node name="RenderScaler" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 6.10352e-05
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 1280, 720 )
+handle_input_locally = false
+hdr = false
+usage = 3
+render_target_update_mode = 3
+shadow_atlas_size = 4096
+
+[node name="World" parent="Viewport" instance=ExtResource( 2 )]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 1 )
+expand = true
+flip_v = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 3 )
