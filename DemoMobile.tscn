@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/FPSLabel.gd" type="Script" id=1]
+[ext_resource path="res://assets/RenderScaler.gd" type="Script" id=2]
+[ext_resource path="res://assets/SceneMobile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/joystick_control/assets/joystick.gd" type="Script" id=4]
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("Viewport")
+
+[node name="DemoMobile" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 6.10352e-05
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 1280, 720 )
+handle_input_locally = false
+hdr = false
+usage = 3
+render_target_update_mode = 3
+shadow_atlas_size = 4096
+
+[node name="World" parent="Viewport" instance=ExtResource( 3 )]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 1 )
+expand = true
+flip_v = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2( 4, 4 )
+transform = Transform2D( 4, 0, 0, 4, 0, 0 )
+
+[node name="Joystick Left" type="Control" parent="CanvasLayer"]
+anchor_left = 0.041
+anchor_top = 0.184
+anchor_right = 0.064
+anchor_bottom = 0.212
+margin_top = 6.10352e-05
+margin_right = 40.0
+margin_bottom = 40.0001
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Joystick Right" type="Control" parent="CanvasLayer"]
+anchor_left = 0.211
+anchor_top = 0.184
+anchor_right = 0.225
+anchor_bottom = 0.212
+margin_top = 6.10352e-05
+margin_right = 40.0
+margin_bottom = 40.0001
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FPS Counter" type="CanvasLayer" parent="."]
+script = ExtResource( 1 )
+
+[editable path="Viewport/World"]

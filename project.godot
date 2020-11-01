@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "CanvasLayer",
 "class": "FpsLabel",
 "language": "GDScript",
-"path": "res://FPSLabel.gd"
+"path": "res://assets/FPSLabel.gd"
 } ]
 _global_script_class_icons={
 "FpsLabel": ""
@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ShellFurTool-Demo"
-run/main_scene="res://RenderScaler.tscn"
+run/main_scene="res://DemoMobile.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -32,7 +32,7 @@ window/dpi/allow_hidpi=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "shell_fur" )
+enabled=PoolStringArray( "joystick_control", "shell_fur" )
 
 [input]
 

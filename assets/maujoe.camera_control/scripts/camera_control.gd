@@ -35,6 +35,7 @@ export var down_action = "ui_page_down"
 # Gui settings
 export var use_gui = true
 export var gui_action = "ui_cancel"
+export var mobile = false
 
 # Intern variables.
 var _mouse_position = Vector2(0.0, 0.0)
@@ -61,6 +62,16 @@ func _ready():
 		_gui = preload("camera_control_gui.gd")
 		_gui = _gui.new(self, gui_action)
 		add_child(_gui)
+	
+	if mobile:
+		get_parent().get_parent().get_parent().get_node("CanvasLayer/Joystick Left").connect("updated", self, "_on_left_joystick")
+		get_parent().get_parent().get_parent().get_node("CanvasLayer/Joystick Right").connect("updated", self, "_on_right_joystick")
+
+func _on_left_joystick(force, pressed) -> void:
+	_direction = Vector3(force.x, 0.0, force.y)
+	
+func _on_right_joystick(force, pressed) -> void:
+	_mouse_position += force
 
 func _input(event):
 	if mouselook:
