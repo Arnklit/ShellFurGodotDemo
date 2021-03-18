@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/moss_height.png-4539a30bbec3055ac6dd353d97290457.s3tc.stex"
-path.etc2="res://.import/moss_height.png-4539a30bbec3055ac6dd353d97290457.etc2.stex"
+path.s3tc="res://.import/rat_fur_ldtg.png-881dab86804ecda3ac3bc6063ca1cdb0.s3tc.stex"
+path.etc2="res://.import/rat_fur_ldtg.png-881dab86804ecda3ac3bc6063ca1cdb0.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/moss_height.png"
-dest_files=[ "res://.import/moss_height.png-4539a30bbec3055ac6dd353d97290457.s3tc.stex", "res://.import/moss_height.png-4539a30bbec3055ac6dd353d97290457.etc2.stex" ]
+source_file="res://assets/textures/rat_fur_ldtg.png"
+dest_files=[ "res://.import/rat_fur_ldtg.png-881dab86804ecda3ac3bc6063ca1cdb0.s3tc.stex", "res://.import/rat_fur_ldtg.png-881dab86804ecda3ac3bc6063ca1cdb0.etc2.stex" ]
 
 [params]
 
