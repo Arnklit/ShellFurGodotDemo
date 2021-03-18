@@ -1,15 +1,16 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
-[ext_resource path="res://assets/Rat.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/rat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/shell_fur/noise_patterns/very_fine.png" type="Texture" id=3]
 [ext_resource path="res://addons/shell_fur/shell_fur_manager.gd" type="Script" id=4]
 [ext_resource path="res://assets/LOD_label.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/Cottage.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/cottage.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/maujoe.camera_control/scripts/camera_control.gd" type="Script" id=7]
 [ext_resource path="res://assets/textures/checker.png" type="Texture" id=8]
-[ext_resource path="res://assets/Log.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/BallBoy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/log.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/ball_boy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/ball_boy2.tscn" type="PackedScene" id=11]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.623529, 0.623529, 0.623529, 1 )
@@ -58,6 +59,9 @@ max_speed = Vector3( 2, 2, 2 )
 [node name="Ball_Boy" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0 )
 
+[node name="BoneAttachment" parent="Ball_Boy/Armature/Skeleton" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
 [node name="LOD_Sphere" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 2 )
 mesh = SubResource( 3 )
@@ -69,24 +73,29 @@ fur_node = NodePath("../ShellFur")
 
 [node name="ShellFur" type="Spatial" parent="LOD_Sphere"]
 script = ExtResource( 4 )
-shape_layers = 20
-shape_pattern_texture = ExtResource( 3 )
-shape_pattern_selector = 0
-shape_density = 5.0
-shape_length = 0.25
-shape_length_rand = 0.3
-shape_length_texture = null
-shape_length_tiling = Vector2( 1, 1 )
-shape_thickness_base = 0.75
-shape_thickness_tip = 0.3
-mat_base_color = Color( 0.43, 0.35, 0.29, 1 )
-mat_tip_color = Color( 0.78, 0.63, 0.52, 1 )
-mat_color_texture = null
-mat_color_tiling = Vector2( 1, 1 )
+shader_type = 0
+custom_shader = null
+layers = 40
+pattern_selector = 0
+pattern_texture = ExtResource( 3 )
+pattern_uv_scale = 5.0
+cast_shadow = false
 mat_transmission = Color( 0.3, 0.3, 0.3, 1 )
 mat_ao = 1.0
 mat_roughness = 1.0
-mat_normal_adjustment = 0.0
+mat_albedo_color = Transform( 0.43, 0.78, 0, 0.35, 0.63, 0, 0.29, 0.52, 0, 0, 0, 0 )
+mat_albedo_uv_scale = Vector3( 1, 1, 0 )
+mat_albedo_texture = null
+mat_shape_length = 0.213
+mat_shape_length_rand = 0.3
+mat_shape_density = 1.0
+mat_shape_thickness_base = 0.75
+mat_shape_thickness_tip = 0.3
+mat_shape_thickness_rand = 0.0
+mat_shape_growth = 1.0
+mat_shape_growth_rand = 0.0
+mat_shape_ldtg_uv_scale = Vector3( 1, 1, 0 )
+mat_shape_ldtg_texture = null
 physics_custom_physics_pivot = NodePath("")
 physics_gravity = 1.0
 physics_spring = 4.0
@@ -95,15 +104,13 @@ physics_wind_strength = 0.0
 physics_wind_speed = 1.0
 physics_wind_scale = 1.0
 physics_wind_angle = 0.0
-styling_blendshape_index = -1
-styling_normal_bias = 0.0
+styling_blendshape = 0
 lod_LOD0_distance = 2.0
 lod_LOD1_distance = 5.0
-adv_cast_shadow = false
-adv_custom_shader = null
+
+[node name="ball_boy" parent="." instance=ExtResource( 11 )]
+transform = Transform( 0.819742, 0, 0.572733, 0, 1, 0, -0.572733, 0, 0.819742, -1.57937, 0, -2.41692 )
 
 [editable path="Rat"]
-
 [editable path="Cottage"]
-
 [editable path="Ball_Boy"]

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/rat_fur_height.png-b37ea82b3466fee35adb475500d32d25.s3tc.stex"
-path.etc2="res://.import/rat_fur_height.png-b37ea82b3466fee35adb475500d32d25.etc2.stex"
+path.s3tc="res://.import/ballboy_fur_ldtg.png-72c0962954b904d43924f0a725f3172e.s3tc.stex"
+path.etc2="res://.import/ballboy_fur_ldtg.png-72c0962954b904d43924f0a725f3172e.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/rat_fur_height.png"
-dest_files=[ "res://.import/rat_fur_height.png-b37ea82b3466fee35adb475500d32d25.s3tc.stex", "res://.import/rat_fur_height.png-b37ea82b3466fee35adb475500d32d25.etc2.stex" ]
+source_file="res://assets/textures/ballboy_fur_ldtg.png"
+dest_files=[ "res://.import/ballboy_fur_ldtg.png-72c0962954b904d43924f0a725f3172e.s3tc.stex", "res://.import/ballboy_fur_ldtg.png-72c0962954b904d43924f0a725f3172e.etc2.stex" ]
 
 [params]
 

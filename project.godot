@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ShellFurTool-Demo"
-run/main_scene="res://DemoMobile.tscn"
+run/main_scene="res://demo_mobile.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -32,7 +32,12 @@ window/dpi/allow_hidpi=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "joystick_control", "shell_fur" )
+enabled=PoolStringArray( "res://addons/joystick_control/plugin.cfg", "res://addons/shell_fur/plugin.cfg" )
+
+[global]
+
+etx=false
+etc=false
 
 [input]
 
@@ -67,4 +72,5 @@ ui_down={
 
 [rendering]
 
+quality/filters/use_fxaa=true
 environment/default_environment="res://default_env.tres"

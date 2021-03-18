@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/FPSLabel.gd" type="Script" id=1]
-[ext_resource path="res://assets/RenderScaler.gd" type="Script" id=2]
-[ext_resource path="res://assets/SceneMobile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/render_scaler.gd" type="Script" id=2]
+[ext_resource path="res://assets/scene_mobile.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/joystick_control/assets/joystick.gd" type="Script" id=4]
 
 [sub_resource type="ViewportTexture" id=1]
@@ -27,6 +27,33 @@ render_target_update_mode = 3
 shadow_atlas_size = 4096
 
 [node name="World" parent="Viewport" instance=ExtResource( 3 )]
+
+[node name="ShellFur" parent="Viewport/World/Rat/Armature/Skeleton/Rat Body" index="0"]
+shader_type = 1
+layers = 20
+
+[node name="ShellFur" parent="Viewport/World/Cottage/Cottage Fur Roof" index="0"]
+shader_type = 1
+layers = 20
+
+[node name="ShellFur" parent="Viewport/World/Mossy_Log/mossy_log" index="0"]
+shader_type = 1
+layers = 10
+
+[node name="Skeleton" parent="Viewport/World/Ball_Boy/Armature" index="0"]
+bones/0/bound_children = [ NodePath("BoneAttachment") ]
+
+[node name="ShellFur" parent="Viewport/World/Ball_Boy/Armature/Skeleton/BallBoy" index="0"]
+shader_type = 1
+layers = 20
+
+[node name="ShellFur" parent="Viewport/World/LOD_Sphere" index="1"]
+shader_type = 1
+layers = 20
+
+[node name="ShellFur" parent="Viewport/World/ball_boy/Armature/Skeleton/BallBoy" index="0"]
+shader_type = 1
+layers = 20
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -72,3 +99,8 @@ __meta__ = {
 script = ExtResource( 1 )
 
 [editable path="Viewport/World"]
+[editable path="Viewport/World/Rat"]
+[editable path="Viewport/World/Cottage"]
+[editable path="Viewport/World/Mossy_Log"]
+[editable path="Viewport/World/Ball_Boy"]
+[editable path="Viewport/World/ball_boy"]

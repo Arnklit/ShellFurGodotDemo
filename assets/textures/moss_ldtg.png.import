@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/ballboy_fur_length.png-6c9c347f704d5a5ccd16718042fc1ac1.s3tc.stex"
-path.etc2="res://.import/ballboy_fur_length.png-6c9c347f704d5a5ccd16718042fc1ac1.etc2.stex"
+path.s3tc="res://.import/moss_ldtg.png-32936920d5d0eea5d621602a06425d4f.s3tc.stex"
+path.etc2="res://.import/moss_ldtg.png-32936920d5d0eea5d621602a06425d4f.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/ballboy_fur_length.png"
-dest_files=[ "res://.import/ballboy_fur_length.png-6c9c347f704d5a5ccd16718042fc1ac1.s3tc.stex", "res://.import/ballboy_fur_length.png-6c9c347f704d5a5ccd16718042fc1ac1.etc2.stex" ]
+source_file="res://assets/textures/moss_ldtg.png"
+dest_files=[ "res://.import/moss_ldtg.png-32936920d5d0eea5d621602a06425d4f.s3tc.stex", "res://.import/moss_ldtg.png-32936920d5d0eea5d621602a06425d4f.etc2.stex" ]
 
 [params]
 

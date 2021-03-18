@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://DemoDesktop.tscn" type="PackedScene" id=1]
+[ext_resource path="res://demo_desktop.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/shell_fur/shaders/shell_fur_mobile.shader" type="Shader" id=2]
 [ext_resource path="res://assets/rat_no_blend.tscn" type="PackedScene" id=3]
 

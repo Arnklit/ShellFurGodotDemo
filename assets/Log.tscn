@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/models/mossy_log.gltf" type="PackedScene" id=1]
 [ext_resource path="res://addons/shell_fur/shell_fur_manager.gd" type="Script" id=2]
-[ext_resource path="res://assets/textures/moss_height.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/moss_ldtg.png" type="Texture" id=3]
 [ext_resource path="res://addons/shell_fur/noise_patterns/very_rough.png" type="Texture" id=4]
 [ext_resource path="res://assets/models/mossy_log.obj" type="ArrayMesh" id=5]
 [ext_resource path="res://assets/textures/moss.png" type="Texture" id=6]
@@ -16,24 +16,29 @@ material/0 = null
 
 [node name="ShellFur" type="Spatial" parent="mossy_log" index="0"]
 script = ExtResource( 2 )
-shape_layers = 10
-shape_pattern_texture = ExtResource( 4 )
-shape_pattern_selector = 3
-shape_density = 19.238
-shape_length = 0.03
-shape_length_rand = 0.711
-shape_length_texture = ExtResource( 3 )
-shape_length_tiling = Vector2( 1, 1 )
-shape_thickness_base = 0.912
-shape_thickness_tip = 0.424
-mat_base_color = Color( 0.439216, 0.439216, 0.439216, 1 )
-mat_tip_color = Color( 0.819608, 0.819608, 0.819608, 1 )
-mat_color_texture = ExtResource( 6 )
-mat_color_tiling = Vector2( 10, 10 )
+shader_type = 0
+custom_shader = null
+layers = 20
+pattern_selector = 3
+pattern_texture = ExtResource( 4 )
+pattern_uv_scale = 20.03
+cast_shadow = false
 mat_transmission = Color( 0.3, 0.3, 0.3, 1 )
 mat_ao = 0.25
 mat_roughness = 1.0
-mat_normal_adjustment = 0.0
+mat_albedo_color = Transform( 0.662745, 1, 0, 0.623529, 1, 0, 0.596078, 1, 1, 0, 0, 0 )
+mat_albedo_uv_scale = Vector3( 1, 1, 0 )
+mat_albedo_texture = ExtResource( 6 )
+mat_shape_length = 0.04
+mat_shape_length_rand = 0.3
+mat_shape_density = 1.0
+mat_shape_thickness_base = 0.75
+mat_shape_thickness_tip = 0.3
+mat_shape_thickness_rand = 0.0
+mat_shape_growth = 1.0
+mat_shape_growth_rand = 0.0
+mat_shape_ldtg_uv_scale = Vector3( 1, 1, 0 )
+mat_shape_ldtg_texture = ExtResource( 3 )
 physics_custom_physics_pivot = NodePath("")
 physics_gravity = 0.0
 physics_spring = 4.0
@@ -42,9 +47,6 @@ physics_wind_strength = 0.0
 physics_wind_speed = 1.0
 physics_wind_scale = 1.0
 physics_wind_angle = 0.0
-styling_blendshape_index = -1
-styling_normal_bias = 0.0
+styling_blendshape = 0
 lod_LOD0_distance = 4.0
 lod_LOD1_distance = 25.0
-adv_cast_shadow = false
-adv_custom_shader = null

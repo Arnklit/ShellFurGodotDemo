@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://addons/shell_fur/noise_patterns/rough.png" type="Texture" id=1]
+[ext_resource path="res://addons/shell_fur/noise_patterns/very_fine.png" type="Texture" id=1]
 [ext_resource path="res://addons/shell_fur/shell_fur_manager.gd" type="Script" id=2]
 [ext_resource path="res://assets/models/ball_boy.gltf" type="PackedScene" id=3]
-[ext_resource path="res://assets/textures/ballboy_fur_length.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/ballboy_fur_ldtg.png" type="Texture" id=4]
 
 [node name="ball_boy" instance=ExtResource( 3 )]
 
@@ -12,24 +12,29 @@ bones/0/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="ShellFur" type="Spatial" parent="Armature/Skeleton/BallBoy" index="0"]
 script = ExtResource( 2 )
-shape_layers = 30
-shape_pattern_texture = ExtResource( 1 )
-shape_pattern_selector = 2
-shape_density = 10.0
-shape_length = 0.15
-shape_length_rand = 0.293
-shape_length_texture = ExtResource( 5 )
-shape_length_tiling = Vector2( 1, 1 )
-shape_thickness_base = 0.868
-shape_thickness_tip = 0.352
-mat_base_color = Color( 0.556863, 0.121569, 0.121569, 1 )
-mat_tip_color = Color( 1, 0.337255, 0.337255, 1 )
-mat_color_texture = null
-mat_color_tiling = Vector2( 1, 1 )
+shader_type = 0
+custom_shader = null
+layers = 40
+pattern_selector = 0
+pattern_texture = ExtResource( 1 )
+pattern_uv_scale = 16.043
+cast_shadow = false
 mat_transmission = Color( 0.3, 0.3, 0.3, 1 )
 mat_ao = 0.5
 mat_roughness = 1.0
-mat_normal_adjustment = 0.0
+mat_albedo_color = Transform( 0.784314, 0.996078, 0, 0.0627451, 0.278431, 0, 0, 0.215686, 1, 0, 0, 0 )
+mat_albedo_uv_scale = Vector3( 1, 1, 0 )
+mat_albedo_texture = null
+mat_shape_length = 0.102
+mat_shape_length_rand = 0.44
+mat_shape_density = 1.0
+mat_shape_thickness_base = 0.919
+mat_shape_thickness_tip = 0.491
+mat_shape_thickness_rand = 0.0
+mat_shape_growth = 2.0
+mat_shape_growth_rand = 0.385
+mat_shape_ldtg_uv_scale = Vector3( 1, 1, 0 )
+mat_shape_ldtg_texture = ExtResource( 4 )
 physics_custom_physics_pivot = NodePath("../../BoneAttachment")
 physics_gravity = 0.309
 physics_spring = 4.0
@@ -38,16 +43,15 @@ physics_wind_strength = 0.04
 physics_wind_speed = 3.011
 physics_wind_scale = 3.609
 physics_wind_angle = 0.0
-styling_blendshape_index = -1
-styling_normal_bias = 0.0
+styling_blendshape = 0
 lod_LOD0_distance = 4.0
 lod_LOD1_distance = 25.0
-adv_cast_shadow = false
-adv_custom_shader = null
 
 [node name="BoneAttachment" type="BoneAttachment" parent="Armature/Skeleton" index="1"]
+transform = Transform( -1, -1.64313e-15, 4.5688e-16, -1.66267e-15, 0.99891, -0.0466729, -3.79692e-16, -0.0466729, -0.99891, 4.72455e-16, -0.197239, 0.0788051 )
 bone_name = "spine_1"
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "ArmatureAction"
 next/ArmatureAction = "ArmatureAction"
+blend_times = [ "ArmatureAction", "ArmatureAction", 0.25 ]
