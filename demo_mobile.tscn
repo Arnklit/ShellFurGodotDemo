@@ -14,7 +14,6 @@ anchor_bottom = 1.0
 margin_bottom = 6.10352e-05
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
@@ -40,20 +39,24 @@ layers = 20
 shader_type = 1
 layers = 10
 
-[node name="Skeleton" parent="Viewport/World/Ball_Boy/Armature" index="0"]
-bones/0/bound_children = [ NodePath("BoneAttachment") ]
-
 [node name="ShellFur" parent="Viewport/World/Ball_Boy/Armature/Skeleton/BallBoy" index="0"]
 shader_type = 1
 layers = 20
+
+[node name="BoneAttachment" parent="Viewport/World/Ball_Boy/Armature/Skeleton" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="ShellFur" parent="Viewport/World/LOD_Sphere" index="1"]
 shader_type = 1
 layers = 20
 
+[node name="Skeleton" parent="Viewport/World/ball_boy/Armature" index="0"]
+bones/0/bound_children = [ NodePath("BoneAttachment") ]
+
 [node name="ShellFur" parent="Viewport/World/ball_boy/Armature/Skeleton/BallBoy" index="0"]
 shader_type = 1
 layers = 20
+mat_ao_light_affect = 0.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
